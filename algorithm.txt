@@ -1,0 +1,27 @@
+1.Read the file
+2.Lets take one row from file
+3.Identify unique label for that row (LABEL_1)
+4.Merge columns with spaces and make it as line (LINE_1)
+5.Keep LINE_1 and map it to the LABEL_1
+6.Remove commas from LINE_1 and map to the LABEL_1
+7.Remove special chars from LINE_1 and map to LABEL_1
+8.Remove stop words from LINE_1 and map to LABEL_1
+9.Now we have around 4-5 lines are mapped to LABEL_1
+	DATA = {
+		LABEL_1:{
+			LINES : ["line1","line2","line3","line4"],
+			Tokens: [],
+			COUNTRIES: [],
+			MATCHES: []
+		},
+		LABEL_2:{
+			LINES : ["line1","line2","line3","line4"],
+			Tokens: [],
+			COUNTRIES: [],
+			MATCHES: []
+		}
+	}
+10.For each lines, Use unigram and run NER to remove named entities, then run pycountry for each words
+11.For each lines, Use bigram and run NER to remove named entities, then  run pycountry for each words.. use trigram if needed
+12.Now we will get duplicate list of countries.
+13. We can rank those cuntries for most match and finalize.
